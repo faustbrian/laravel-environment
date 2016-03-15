@@ -1,28 +1,73 @@
 <?php
 
-namespace DraperStudio\Env;
+/*
+ * This file is part of Laravel Secure Environment.
+ *
+ * (c) DraperStudio <hello@draperstudio.tech>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
-use DraperStudio\ServiceProvider\ServiceProvider as BaseProvider;
+namespace DraperStudio\Environment;
 
-class ServiceProvider extends BaseProvider
+/**
+ * Class ServiceProvider.
+ *
+ * @author DraperStudio <hello@draperstudio.tech>
+ */
+class ServiceProvider extends \DraperStudio\ServiceProvider\ServiceProvider
 {
-    protected $packageName = 'env';
-
+    /**
+     * Bootstrap the application services.
+     */
     public function boot()
     {
-        $this->setup(__DIR__)
-             ->publishConfig()
-             ->mergeConfig($this->packageName);
+        $this->publishConfig();
     }
 
+    /**
+     * Register the application services.
+     */
     public function register()
     {
-        define('SECURE_DOT_ENV', true);
+        parent::register();
 
+        $this->mergeConfig();
+
+        if(!defined('SECURE_DOT_ENV')) {
+            define('SECURE_DOT_ENV', true);
+        }
+        
         $this->commands(Console\Commands\DecryptEnvCommand::class);
         $this->commands(Console\Commands\EncryptEnvCommand::class);
         $this->commands(Console\Commands\GenerateEnvKeyCommand::class);
         $this->commands(Console\Commands\RefreshEnvCommand::class);
         $this->commands(Console\Commands\RestoreEnvCommand::class);
+    }
+
+    /**
+     * Get the services provided by the provider.
+     *
+     * @return array
+     */
+    public function provides()
+    {
+        return array_merge(parent::provides(), [
+            Console\Commands\DecryptEnvCommand::class,
+            Console\Commands\EncryptEnvCommand::class,
+            Console\Commands\GenerateEnvKeyCommand::class,
+            Console\Commands\RefreshEnvCommand::class,
+            Console\Commands\RestoreEnvCommand::class,
+        ]);
+    }
+    /**
+     * Get the default package name.
+     *
+     * @return string
+     */
+    public function getPackageName()
+    {
+        return 'env';
     }
 }
