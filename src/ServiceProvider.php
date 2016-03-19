@@ -35,10 +35,10 @@ class ServiceProvider extends \DraperStudio\ServiceProvider\ServiceProvider
 
         $this->mergeConfig();
 
-        if(!defined('SECURE_DOT_ENV')) {
+        if (!defined('SECURE_DOT_ENV')) {
             define('SECURE_DOT_ENV', true);
         }
-        
+
         $this->commands(Console\Commands\DecryptEnvCommand::class);
         $this->commands(Console\Commands\EncryptEnvCommand::class);
         $this->commands(Console\Commands\GenerateEnvKeyCommand::class);
@@ -61,6 +61,7 @@ class ServiceProvider extends \DraperStudio\ServiceProvider\ServiceProvider
             Console\Commands\RestoreEnvCommand::class,
         ]);
     }
+
     /**
      * Get the default package name.
      *

@@ -28,9 +28,6 @@ class EncryptEnvCommand extends EnvCommand
      */
     protected $description = 'Encrypt the .env file.';
 
-    /**
-     *
-     */
     public function handle()
     {
         if ($this->exists('backup')) {

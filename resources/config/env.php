@@ -12,7 +12,7 @@ return [
     | will not be safe. Please do this before deploying an application!
     |
     */
-   
+
     'key' => '5W183ikLhZqoJ1Ye',
 
 ];

@@ -28,9 +28,6 @@ class DecryptEnvCommand extends EnvCommand
      */
     protected $description = 'Decrypt the .env file.';
 
-    /**
-     *
-     */
     public function handle()
     {
         $contents = $this->getEnvVars()->map(function ($value, $key) {

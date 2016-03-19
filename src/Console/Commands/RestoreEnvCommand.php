@@ -28,9 +28,6 @@ class RestoreEnvCommand extends EnvCommand
      */
     protected $description = 'Restore the .env file.';
 
-    /**
-     *
-     */
     public function handle()
     {
         $this->copy('backup', 'encrypted');

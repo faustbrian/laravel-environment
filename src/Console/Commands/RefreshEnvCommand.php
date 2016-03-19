@@ -28,9 +28,6 @@ class RefreshEnvCommand extends EnvCommand
      */
     protected $description = 'Re-Encrypt the .env file.';
 
-    /**
-     *
-     */
     public function handle()
     {
         $contents = $this->getEnvVars('backup')->map(function ($value, $key) {
