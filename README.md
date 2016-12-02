@@ -13,11 +13,7 @@ $ composer require faustbrian/laravel-environment
 Add the service provider to `config/app.php` in the `providers` array.
 
 ``` php
-'providers' => [
-    // ... Illuminate Providers
-    // ... App Providers
-    BrianFaust\Environment\ServiceProvider::class
-];
+BrianFaust\Environment\EnvironmentServiceProvider::class
 ```
 
 ## Configuration
@@ -27,7 +23,7 @@ Laravel Env supports optional configuration.
 To get started, you'll need to publish all vendor assets:
 
 ```bash
-$ php artisan vendor:publish --provider="BrianFaust\Environment\ServiceProvider"
+$ php artisan vendor:publish --provider="BrianFaust\Environment\EnvironmentServiceProvider"
 ```
 
 This will create a `config/env.php` file in your app that you can modify to set your configuration. Also, make sure you check for changes to the original config file in this package between releases.
