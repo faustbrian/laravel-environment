@@ -9,6 +9,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace BrianFaust\Environment;
 
 class ServiceProvider extends \BrianFaust\ServiceProvider\ServiceProvider
@@ -16,7 +18,7 @@ class ServiceProvider extends \BrianFaust\ServiceProvider\ServiceProvider
     /**
      * Bootstrap the application services.
      */
-    public function boot()
+    public function boot(): void
     {
         $this->publishConfig();
     }
@@ -24,7 +26,7 @@ class ServiceProvider extends \BrianFaust\ServiceProvider\ServiceProvider
     /**
      * Register the application services.
      */
-    public function register()
+    public function register(): void
     {
         parent::register();
 
@@ -46,7 +48,7 @@ class ServiceProvider extends \BrianFaust\ServiceProvider\ServiceProvider
      *
      * @return array
      */
-    public function provides()
+    public function provides(): array
     {
         return array_merge(parent::provides(), [
             Console\Commands\DecryptEnvCommand::class,
@@ -62,7 +64,7 @@ class ServiceProvider extends \BrianFaust\ServiceProvider\ServiceProvider
      *
      * @return string
      */
-    public function getPackageName()
+    public function getPackageName(): string
     {
         return 'env';
     }

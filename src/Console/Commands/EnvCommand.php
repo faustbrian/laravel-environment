@@ -9,6 +9,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace BrianFaust\Environment\Console\Commands;
 
 use Illuminate\Console\Command;
@@ -26,7 +28,7 @@ abstract class EnvCommand extends Command
     /**
      * EnvCommand constructor.
      */
-    public function __construct()
+    public function __construct(): void
     {
         parent::__construct();
 
