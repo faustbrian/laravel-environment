@@ -42,7 +42,7 @@ class GenerateEnvKeyCommand extends Command
      */
     protected $description = 'Generate a new encryption key for the env.php config file.';
 
-    public function handle()
+    public function handle(): void
     {
         $this->info(Str::random(16));
     }

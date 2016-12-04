@@ -51,7 +51,7 @@ abstract class EnvCommand extends Command
     /**
      * @return Encrypter
      */
-    protected function getEncrypter()
+    protected function getEncrypter(): Encrypter
     {
         return new Encrypter(config('env.key'));
     }
@@ -61,7 +61,7 @@ abstract class EnvCommand extends Command
      *
      * @return Collection
      */
-    protected function getEnvVars($file = null)
+    protected function getEnvVars($file = null): Collection
     {
         return new Collection(parse_ini_file($this->files[$file ?: 'encrypted']));
     }
@@ -71,7 +71,7 @@ abstract class EnvCommand extends Command
      *
      * @return string
      */
-    protected function encrypt($value)
+    protected function encrypt($value): string
     {
         return $this->getEncrypter()->encrypt($value);
     }
@@ -81,7 +81,7 @@ abstract class EnvCommand extends Command
      *
      * @return string
      */
-    protected function decrypt($value)
+    protected function decrypt($value): string
     {
         return $this->getEncrypter()->decrypt(substr($value, 4));
     }
@@ -92,7 +92,7 @@ abstract class EnvCommand extends Command
      *
      * @return string
      */
-    protected function buildEncryptedString($key, $value)
+    protected function buildEncryptedString($key, $value): string
     {
         return sprintf('%s="ENC:%s"', $key, $this->encrypt($value));
     }
@@ -103,7 +103,7 @@ abstract class EnvCommand extends Command
      *
      * @return string
      */
-    protected function buildDecryptedString($key, $value)
+    protected function buildDecryptedString($key, $value): string
     {
         return sprintf('%s=%s', $key, $this->decrypt($value) ?: 'null');
     }
@@ -114,9 +114,9 @@ abstract class EnvCommand extends Command
      *
      * @return mixed
      */
-    protected function write($file, $contents)
+    protected function write($file, $contents): bool
     {
-        return File::put($this->files[$file], $contents->implode("\n"));
+        return (bool) File::put($this->files[$file], $contents->implode("\n"));
     }
 
     /**
@@ -125,9 +125,9 @@ abstract class EnvCommand extends Command
      *
      * @return mixed
      */
-    protected function copy($src, $dest)
+    protected function copy($src, $dest): bool
     {
-        return File::copy($this->files[$src], $this->files[$dest]);
+        return (bool) File::copy($this->files[$src], $this->files[$dest]);
     }
 
     /**
@@ -135,9 +135,9 @@ abstract class EnvCommand extends Command
      *
      * @return mixed
      */
-    protected function delete($file)
+    protected function delete($file): bool
     {
-        return File::delete($this->files[$file]);
+        return (bool) File::delete($this->files[$file]);
     }
 
     /**
@@ -145,7 +145,7 @@ abstract class EnvCommand extends Command
      *
      * @return mixed
      */
-    protected function exists($file)
+    protected function exists($file): bool
     {
         return File::exists($this->files[$file]);
     }

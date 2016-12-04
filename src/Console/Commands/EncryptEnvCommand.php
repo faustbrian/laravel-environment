@@ -34,7 +34,7 @@ class EncryptEnvCommand extends EnvCommand
      */
     protected $description = 'Encrypt the .env file.';
 
-    public function handle()
+    public function handle(): void
     {
         if ($this->exists('backup')) {
             $this->error('.env file is already encrypted.');
