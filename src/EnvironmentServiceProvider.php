@@ -13,7 +13,9 @@ declare(strict_types=1);
 
 namespace BrianFaust\Environment;
 
-class ServiceProvider extends \BrianFaust\ServiceProvider\ServiceProvider
+use BrianFaust\ServiceProvider\AbstractServiceProvider;
+
+class EnvironmentServiceProvider extends AbstractServiceProvider
 {
     /**
      * Bootstrap the application services.
