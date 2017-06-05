@@ -1,8 +1,5 @@
 <?php
 
-
-declare(strict_types=1);
-
 /*
  * This file is part of Laravel Environment.
  *
@@ -26,7 +23,7 @@ class RestoreEnvCommand extends EnvCommand
      */
     protected $description = 'Restore the .env file.';
 
-    public function handle(): void
+    public function handle()
     {
         $this->copy('backup', 'encrypted');
 

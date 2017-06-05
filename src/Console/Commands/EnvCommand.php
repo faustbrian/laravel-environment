@@ -1,8 +1,5 @@
 <?php
 
-
-declare(strict_types=1);
-
 /*
  * This file is part of Laravel Environment.
  *
@@ -35,7 +32,7 @@ abstract class EnvCommand extends Command
 
         $this->files = [
             'encrypted' => base_path('.env'),
-            'backup'    => base_path('.env.backup'),
+            'backup' => base_path('.env.backup'),
             'decrypted' => base_path('.env.decrypted'),
         ];
     }
@@ -45,7 +42,7 @@ abstract class EnvCommand extends Command
      */
     protected function getEncrypter(): Encrypter
     {
-        return new Encrypter(config('env.key'));
+        return new Encrypter(config('laravel-env.key'));
     }
 
     /**

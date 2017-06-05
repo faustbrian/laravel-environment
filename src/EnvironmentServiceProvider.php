@@ -1,8 +1,5 @@
 <?php
 
-
-declare(strict_types=1);
-
 /*
  * This file is part of Laravel Environment.
  *
@@ -14,26 +11,26 @@ declare(strict_types=1);
 
 namespace BrianFaust\Environment;
 
-use BrianFaust\ServiceProvider\AbstractServiceProvider;
+use Illuminate\Support\ServiceProvider;
 
-class EnvironmentServiceProvider extends AbstractServiceProvider
+class EnvironmentServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
      */
-    public function boot(): void
+    public function boot()
     {
-        $this->publishConfig();
+        $this->publishes([
+            __DIR__.'/../config/laravel-env.php' => config_path('laravel-env.php'),
+        ], 'config');
     }
 
     /**
      * Register the application services.
      */
-    public function register(): void
+    public function register()
     {
-        parent::register();
-
-        $this->mergeConfig();
+        $this->mergeConfigFrom(__DIR__.'/../config/laravel-env.php', 'laravel-env');
 
         if (!defined('SECURE_DOT_ENV')) {
             define('SECURE_DOT_ENV', true);
@@ -60,15 +57,5 @@ class EnvironmentServiceProvider extends AbstractServiceProvider
             Console\Commands\RefreshEnvCommand::class,
             Console\Commands\RestoreEnvCommand::class,
         ]);
-    }
-
-    /**
-     * Get the default package name.
-     *
-     * @return string
-     */
-    public function getPackageName(): string
-    {
-        return 'env';
     }
 }

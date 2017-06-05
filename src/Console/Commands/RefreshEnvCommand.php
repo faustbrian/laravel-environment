@@ -1,8 +1,5 @@
 <?php
 
-
-declare(strict_types=1);
-
 /*
  * This file is part of Laravel Environment.
  *
@@ -26,7 +23,7 @@ class RefreshEnvCommand extends EnvCommand
      */
     protected $description = 'Re-Encrypt the .env file.';
 
-    public function handle(): void
+    public function handle()
     {
         $contents = $this->getEnvVars('backup')->map(function ($value, $key) {
             return $this->buildEncryptedString($key, $value);

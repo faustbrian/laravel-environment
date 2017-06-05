@@ -1,8 +1,5 @@
 <?php
 
-
-declare(strict_types=1);
-
 /*
  * This file is part of Laravel Environment.
  *
@@ -26,7 +23,7 @@ class DecryptEnvCommand extends EnvCommand
      */
     protected $description = 'Decrypt the .env file.';
 
-    public function handle(): void
+    public function handle()
     {
         $contents = $this->getEnvVars()->map(function ($value, $key) {
             return $this->buildDecryptedString($key, $value);

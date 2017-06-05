@@ -1,8 +1,5 @@
 <?php
 
-
-declare(strict_types=1);
-
 /*
  * This file is part of Laravel Environment.
  *
@@ -26,7 +23,7 @@ class EncryptEnvCommand extends EnvCommand
      */
     protected $description = 'Encrypt the .env file.';
 
-    public function handle(): void
+    public function handle()
     {
         if ($this->exists('backup')) {
             $this->error('.env file is already encrypted.');

@@ -1,8 +1,5 @@
 <?php
 
-
-declare(strict_types=1);
-
 /*
  * This file is part of Laravel Environment.
  *
@@ -34,7 +31,7 @@ class GenerateEnvKeyCommand extends Command
      */
     protected $description = 'Generate a new encryption key for the env.php config file.';
 
-    public function handle(): void
+    public function handle()
     {
         $this->info(Str::random(16));
     }

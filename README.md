@@ -12,12 +12,6 @@ Require this package, with [Composer](https://getcomposer.org/), in the root dir
 $ composer require faustbrian/laravel-environment
 ```
 
-Add the service provider to `config/app.php` in the `providers` array.
-
-``` php
-BrianFaust\Environment\EnvironmentServiceProvider::class
-```
-
 ## Configuration
 
 Laravel Env supports optional configuration.
@@ -49,19 +43,11 @@ Add the following code at the very top of `bootstrap/app.php`, above any other c
 require_once(__DIR__.'/../vendor/faustbrian/laravel-environment/src/functions.php');
 ```
 
-## Changelog
-
-Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
-
 ## Testing
 
 ``` bash
 $ phpunit
 ```
-
-## Contributing
-
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Security
 
