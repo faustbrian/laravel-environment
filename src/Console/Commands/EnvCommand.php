@@ -32,7 +32,7 @@ abstract class EnvCommand extends Command
 
         $this->files = [
             'encrypted' => base_path('.env'),
-            'backup' => base_path('.env.backup'),
+            'backup'    => base_path('.env.backup'),
             'decrypted' => base_path('.env.decrypted'),
         ];
     }
