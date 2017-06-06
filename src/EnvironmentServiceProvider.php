@@ -36,21 +36,15 @@ class EnvironmentServiceProvider extends ServiceProvider
             define('SECURE_DOT_ENV', true);
         }
 
-        $this->commands(Console\Commands\DecryptEnvCommand::class);
-        $this->commands(Console\Commands\EncryptEnvCommand::class);
-        $this->commands(Console\Commands\GenerateEnvKeyCommand::class);
-        $this->commands(Console\Commands\RefreshEnvCommand::class);
-        $this->commands(Console\Commands\RestoreEnvCommand::class);
+        $this->registerCommands();
     }
 
     /**
-     * Get the services provided by the provider.
-     *
-     * @return array
+     * Register the console commands.
      */
-    public function provides(): array
+    public function registerCommands()
     {
-        return array_merge(parent::provides(), [
+        $this->commands([
             Console\Commands\DecryptEnvCommand::class,
             Console\Commands\EncryptEnvCommand::class,
             Console\Commands\GenerateEnvKeyCommand::class,
