@@ -11,8 +11,8 @@
 
 namespace BrianFaust\Environment\Console\Commands;
 
-use Illuminate\Console\Command;
 use Illuminate\Support\Str;
+use Illuminate\Console\Command;
 
 /**
  * Class GenerateEnvKeyCommand.

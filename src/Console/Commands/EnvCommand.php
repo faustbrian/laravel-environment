@@ -12,8 +12,8 @@
 namespace BrianFaust\Environment\Console\Commands;
 
 use Illuminate\Console\Command;
-use Illuminate\Encryption\Encrypter;
 use Illuminate\Support\Collection;
+use Illuminate\Encryption\Encrypter;
 use Illuminate\Support\Facades\File;
 
 abstract class EnvCommand extends Command

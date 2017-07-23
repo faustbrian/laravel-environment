@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-if (!function_exists('sec_env')) {
+if (! function_exists('sec_env')) {
     /**
      * @param $name
      * @param null $fallback
