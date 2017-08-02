@@ -3,7 +3,7 @@
 /*
  * This file is part of Laravel Environment.
  *
- * (c) Brian Faust <hello@brianfaust.de>
+ * (c) Brian Faust <hello@brianfaust.me>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -17,7 +17,7 @@ use Illuminate\Console\Command;
 /**
  * Class GenerateEnvKeyCommand.
  *
- * @author Brian Faust <hello@brianfaust.de>
+ * @author Brian Faust <hello@brianfaust.me>
  */
 class GenerateEnvKeyCommand extends Command
 {
