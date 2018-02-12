@@ -34,7 +34,7 @@ class EnvironmentServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__.'/../config/laravel-env.php', 'laravel-env');
 
-        if (! defined('SECURE_DOT_ENV')) {
+        if (!defined('SECURE_DOT_ENV')) {
             define('SECURE_DOT_ENV', true);
         }
 
