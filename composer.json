@@ -1,19 +1,25 @@
 {
     "name": "artisanry/environment",
     "description": "Encrypted .env files for Laravel 5",
-    "keywords": ["laravel", "framework", "Laravel-Environment", "Laravel Environment"],
+    "keywords": [
+        "laravel",
+        "framework",
+        "Laravel-Environment",
+        "Laravel Environment"
+    ],
     "license": "MIT",
-    "authors": [{
-        "name": "Brian Faust",
-        "email": "hello@basecode.sh",
-        "homepage": "https://basecode.sh"
-    }],
+    "authors": [
+        {
+            "name": "Brian Faust",
+            "email": "hello@basecode.sh",
+            "homepage": "https://basecode.sh"
+        }
+    ],
     "require": {
-        "php": "^7.1",
-        "illuminate/support": "^5.6",
-        "illuminate/console": "^5.6",
-        "illuminate/encryption": "^5.6",
-        "illuminate/support": "^5.6"
+        "php": "^7.2",
+        "illuminate/console": "^5.8",
+        "illuminate/encryption": "^5.8",
+        "illuminate/support": "^5.8"
     },
     "require-dev": {
         "graham-campbell/testbench": "^5.0",
