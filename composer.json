@@ -1,12 +1,12 @@
 {
-    "name": "faustbrian/laravel-environment",
+    "name": "artisanry/environment",
     "description": "Encrypted .env files for Laravel 5",
-    "keywords": ["laravel", "framework", "Laravel-Environment", "Laravel Environment", "Brian Faust", "faustbrian"],
+    "keywords": ["laravel", "framework", "Laravel-Environment", "Laravel Environment"],
     "license": "MIT",
     "authors": [{
         "name": "Brian Faust",
-        "email": "hello@brianfaust.me",
-        "homepage": "https://brianfaust.me"
+        "email": "hello@basecode.sh",
+        "homepage": "https://basecode.sh"
     }],
     "require": {
         "php": "^7.1",
@@ -22,12 +22,12 @@
     },
     "autoload": {
         "psr-4": {
-            "BrianFaust\\Environment\\": "src/"
+            "Artisanry\\Environment\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "BrianFaust\\Tests\\Environment\\": "tests"
+            "Artisanry\\Tests\\Environment\\": "tests"
         }
     },
     "config": {
@@ -40,7 +40,7 @@
         },
         "laravel": {
             "providers": [
-                "BrianFaust\\Environment\\EnvironmentServiceProvider"
+                "Artisanry\\Environment\\EnvironmentServiceProvider"
             ]
         }
     },
