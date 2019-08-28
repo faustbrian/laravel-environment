@@ -8,18 +8,16 @@
         "Laravel Environment"
     ],
     "license": "MPL-2.0",
-    "authors": [
-        {
-            "name": "Brian Faust",
-            "email": "hello@basecode.sh",
-            "homepage": "https://basecode.sh"
-        }
-    ],
+    "authors": [{
+        "name": "Brian Faust",
+        "email": "hello@basecode.sh",
+        "homepage": "https://basecode.sh"
+    }],
     "require": {
         "php": "^7.2",
-        "illuminate/console": "^5.8",
-        "illuminate/encryption": "^5.8",
-        "illuminate/support": "^5.8"
+        "illuminate/console": "^5.8|^6.0",
+        "illuminate/encryption": "^5.8|^6.0",
+        "illuminate/support": "^5.8|^6.0"
     },
     "require-dev": {
         "graham-campbell/testbench": "^5.0",
